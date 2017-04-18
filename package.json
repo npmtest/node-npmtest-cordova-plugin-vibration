@@ -1,1 +1,40 @@
-{     "devDependencies": {         "cordova-plugin-vibration": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-cordova-plugin-vibration",     "homepage": "https://github.com/npmtest/node-npmtest-cordova-plugin-vibration",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-cordova-plugin-vibration.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [cordova-plugin-vibration (v2.1.4)](https://github.com/apache/cordova-plugin-vibration#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cordova-plugin-vibration.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cordova-plugin-vibration) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cordova-plugin-vibration.svg)](https://travis-ci.org/npmtest/node-npmtest-cordova-plugin-vibration)",
+    "devDependencies": {
+        "cordova-plugin-vibration": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-cordova-plugin-vibration",
+    "keywords": [
+        "coverage",
+        "test",
+        "cordova-plugin-vibration"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_cordova_plugin_vibration.js",
+    "name": "npmtest-cordova-plugin-vibration",
+    "nameAlias": "npmtest_cordova_plugin_vibration",
+    "nameOriginal": "npmtest-cordova-plugin-vibration",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-cordova-plugin-vibration.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
